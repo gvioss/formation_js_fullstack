@@ -1,8 +1,13 @@
 {
   "name": "adress-book",
   "version": "0.0.1",
+  "scripts": {
+    "start": "node server",
+    "start:dev": "nodemon server"
+  },
   "devDependencies": {
-    "jspm": "^0.16.52"
+    "jspm": "^0.16.52",
+    "nodemon": "^1.11.0"
   },
   "dependencies": {
     "express": "^4.14.1"
