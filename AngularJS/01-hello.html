@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="node_modules/angular/angular.js"></script>
 </head>
 <body>
-
+    <div>
+        Prénom : <input ng-model="prenom">
+    </div>
+    <p>Bonjour <span ng-bind="prenom"></span>.</p>
 </body>
 </html>
