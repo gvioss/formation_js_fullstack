@@ -7,8 +7,21 @@ module.exports.list = function(req, res, next) {
 };
 
 module.exports.show = function(req, res, next) {
-    let id = req.params.id;
-    let contact = Contact.findById({id}, function(err, contacts){
+    Contact.findById(req.params.id, function(err, contact){
+        res.json(contact);
+    });
+};
+
+exports.create = (req, res, next) => {
+    const contact = new Contact(req.body);
+    contact.save(function(err, contact){
+        res.statusCode = 201;
+        res.json(contact);
+    });
+};
+
+module.exports.remove = function(req, res, next) {
+    Contact.findByIdAndRemove(req.params.id, function(err, contact){
         res.json(contact);
     });
 };
