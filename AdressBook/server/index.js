@@ -1,5 +1,8 @@
 const express = require('express');
 const contact = require('./route/contact');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/adressbook');
 
 const app = express();
 
