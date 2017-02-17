@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="en" ng-app="app" ng-strinct-di>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="node_modules/angular/angular.js"></script>
 </head>
 <body ng-controller="PrenomCtrl">
+<!--
+6 - Controller : une fonction constructeur qui nous permet d'écrire
+du code JS en lien avec le scope d'une balise
+7 - Injection de dépendance : pour un controlleur et d'autre type
+de composant, déclarer un paramètre d'entrée exprime une demande
+de dépendance (donne moi l'objet ou le service, ex : $scope ou $http)
+Les services doivent avoir été créé et inclus
+8 - Module : convention Angular, 1 module = 1 fichier
+9 - Annotation : les services doivent être également écrit sous
+la forme d'un String pour minifier le code
+-->
 <div>
     Prénoms : <input ng-model="prenom">
     <button ng-click="ajouter()">+</button>
