@@ -22,7 +22,12 @@ app.use('/api', function(req, res, next){
 app.use('/api', function(err, req, res, next){
     res.statusCode = 500;
     res.json(err);
-})
+});
+
+// Pour que les url Angular servent l'application
+app.use(function(req, res, next){
+    res.sendfile(path.resolve(__dirname + '/../client/index.html'));
+});
 
 app.listen(8080, function(){
     console.log('Server listening');
