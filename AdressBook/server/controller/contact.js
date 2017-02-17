@@ -1,9 +1,11 @@
 const Contact = require('../model/contact');
 
 module.exports.list = function(req, res, next) {
-    Contact.find({}, function(err, contacts){
-        res.json(contacts);
-    });
+    Contact.find({})
+        .then(function(contacts) {
+            res.json(contacts);
+        })
+        .catch(next);
 };
 
 module.exports.show = function(req, res, next) {
