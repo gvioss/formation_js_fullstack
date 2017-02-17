@@ -26,7 +26,7 @@ app.use('/api', function(err, req, res, next){
 
 // Pour que les url Angular servent l'application
 app.use(function(req, res, next){
-    res.sendfile(path.resolve(__dirname + '/../client/index.html'));
+    res.sendFile(path.resolve(__dirname + '/../client/index.html'));
 });
 
 app.listen(8080, function(){
