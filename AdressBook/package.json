@@ -20,6 +20,8 @@
       "baseURL": "client"
     },
     "dependencies": {
+      "angular": "github:angular/bower-angular@^1.6.2",
+      "bootstrap": "github:twbs/bootstrap@^3.3.7",
       "moment": "npm:moment@^2.17.1"
     },
     "devDependencies": {

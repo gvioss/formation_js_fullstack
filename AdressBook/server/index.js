@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const contact = require('./route/contact');
 const mongoose = require('mongoose');
@@ -6,6 +7,7 @@ mongoose.connect('mongodb://localhost/adressbook');
 
 const app = express();
 
+app.use(express.static(path.resolve(__dirname + '/../client')));
 app.use('/api/contacts', contact);
 
 // 404
