@@ -17,12 +17,14 @@ module.config(['$locationProvider', '$stateProvider', function($locationProvider
     $stateProvider.state('contact-list', {
         url: '/',
         controller: 'ContactListCtrl',
+        controllerAs: '$ctrl',
         templateUrl: 'app/contact-list/contact-list.template.html'
     });
 
     $stateProvider.state('contact-add', {
         url: '/add',
         controller: 'ContactAddCtrl',
+        controllerAs: '$ctrl',
         templateUrl: 'app/contact-add/contact-add.template.html'
     })
 }]);

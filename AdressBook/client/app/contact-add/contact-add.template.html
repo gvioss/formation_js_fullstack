@@ -1,12 +1,18 @@
 <h2>Ajouter un contact</h2>
-<form novalidate>
-    <div class="form-group">
+<form novalidate name="contactForm" ng-submit="contactForm.$valid && $ctrl.add()">
+    <div class="form-group" ng-class="{'has-error': contactForm.nom.$invalid && contactForm.nom.$dirty}">
         <label>Nom</label>
-        <input type="text" class="form-control" required ng-model="contact.nom">
+        <input type="text" class="form-control" required ng-model="$ctrl.contact.nom">
+        <span class="help-block" ng-if="contactForm.nom.$invalid && contactForm.nom.$dirty">
+            Ce champs est obligatoire
+        </span>
     </div>
-    <div class="form-group">
+    <div class="form-group" ng-class="{'has-error': contactForm.prenom.$invalid && contactForm.prenom.$dirty}">
         <label>Prenom</label>
-        <input type="text" class="form-control" required ng-model="contact.prenom">
+        <input type="text" class="form-control" required ng-model="$ctrl.contact.prenom">
+        <span class="help-block" ng-if="contactForm.prenom.$invalid && contactForm.prenom.$dirty">
+            Ce champs est obligatoire
+        </span>
     </div>
     <button type="submit" class="btn btn-default">Ajouter</button>
 </form>
